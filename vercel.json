@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "rm -rf .vercel-out && mkdir .vercel-out && cp -R demo/. .vercel-out",
+  "outputDirectory": ".vercel-out"
+}

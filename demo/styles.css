@@ -1,0 +1,312 @@
+:root {
+  color-scheme: light;
+  --ink: #1c2830;
+  --muted: #3e5160;
+  --line: #d5ddd8;
+  --paper: #f6f4ef;
+  --card: #ffffff;
+  --banner: #f3e2c4;
+  --banner-ink: #5c3b12;
+  --water: #0e4d6c;
+  --water-dark: #08344a;
+  --focus: #b45309;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: white;
+  padding: 0.4rem 0.7rem;
+  z-index: 2;
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+.banner {
+  background: var(--banner);
+  color: var(--banner-ink);
+  padding: 0.85rem 1.25rem;
+}
+
+.banner p {
+  margin: 0.15rem auto;
+  max-width: 68rem;
+}
+
+.banner-kicker {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+main {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+}
+
+.intro h1,
+.scenario h2,
+.demo h2,
+.demo h3 {
+  font-family: Palatino, "Iowan Old Style", "Palatino Linotype", serif;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--water);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 2.1rem;
+}
+
+.lede {
+  font-size: 1.12rem;
+}
+
+.scenario,
+.demo {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.1rem 1.15rem 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.75rem 1rem;
+  margin: 0;
+}
+
+.facts div {
+  margin: 0;
+}
+
+.facts dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0.1rem 0 0;
+  font-weight: 600;
+}
+
+.note {
+  display: block;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.units {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+select,
+input {
+  font: inherit;
+  color: inherit;
+  background: white;
+  border: 1px solid #b7c4cc;
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  min-height: 2.4rem;
+}
+
+input[aria-invalid="true"] {
+  border-color: #9b2c2c;
+  background: #fff6f6;
+}
+
+select:focus,
+input:focus,
+button:focus-visible,
+.skip:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.35rem 0.4rem 0.35rem 0;
+  vertical-align: middle;
+}
+
+th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+td input {
+  width: 100%;
+  min-width: 8.5rem;
+}
+
+.issues {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  color: #9b2c2c;
+}
+
+.issues:empty {
+  display: none;
+}
+
+.summary {
+  background: #eef4f7;
+  border-radius: 8px;
+  padding: 0.8rem 0.9rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+button {
+  font: inherit;
+  font-weight: 700;
+  color: white;
+  background: var(--water);
+  border: 0;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--water-dark);
+}
+
+button:disabled {
+  background: #8aa0ab;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  color: var(--water-dark);
+  background: transparent;
+  border: 1px solid var(--water);
+}
+
+button.secondary:hover {
+  background: #e7f1f6;
+}
+
+.fine-print,
+footer {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+footer p {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    border-top: 1px solid var(--line);
+    padding: 0.55rem 0 0.2rem;
+  }
+
+  td {
+    padding: 0.2rem 0 0.45rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+  }
+
+  td input {
+    min-width: 0;
+  }
+}

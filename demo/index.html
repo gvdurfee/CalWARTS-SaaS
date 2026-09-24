@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CalWATRS Measurement Package — Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#demo">Skip to what-if demo</a>
+    <header class="banner" role="banner">
+      <p class="banner-kicker">Prototype / demo</p>
+      <p>
+        This is a prototype of the CalWATRS Measurement Package. It does not submit to CalWATRS
+        and it does not certify compliance. Sample names and the Measurement Device ID are fictional.
+      </p>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">CalWATRS Measurement Package</p>
+        <h1 id="page-title">From logger readings to a Board-ready A1 file</h1>
+        <p class="lede">
+          A Qualified Individual prepares measurement packages for claimed water rights. This
+          prototype shows the job in miniature: start from a measurement device on a mid-size
+          agricultural diversion, adjust a few sample measurements, and download a Demo A1 CSV for
+          Diversion to Direct Use.
+        </p>
+        <p>
+          CalWATRS is the State Water Resources Control Board portal. The Board still receives the
+          filing from a person. This page only drafts a demonstration Template Data File. It is not
+          the full product: no Device registry, no Methodology draft, no Filing checklist, and no
+          Audit log.
+        </p>
+      </section>
+
+      <section class="scenario" aria-labelledby="scenario-title">
+        <h2 id="scenario-title">Sample scenario</h2>
+        <p>
+          North Ditch – Sample Ranch is a fictional diversion for Sample Irrigation Client. One
+          claimed water right. One measurement device. Template A1 — Diversion to Direct Use.
+          Water year 2026 (October 1, 2025 through September 30, 2026).
+        </p>
+        <dl class="facts">
+          <div>
+            <dt>Claimed water right</dt>
+            <dd>SAMPLE-WR-001</dd>
+          </div>
+          <div>
+            <dt>Point of Diversion</dt>
+            <dd>POD North Ditch</dd>
+          </div>
+          <div>
+            <dt>Place of Use</dt>
+            <dd>North field</dd>
+          </div>
+          <div>
+            <dt>Beneficial use</dt>
+            <dd>irrigation</dd>
+          </div>
+          <div>
+            <dt>Measurement device</dt>
+            <dd>North ditch magnetic meter</dd>
+          </div>
+          <div>
+            <dt>Measurement Device ID</dt>
+            <dd>M0SAMPLE1 <span class="note">sample only — not a real Board id</span></dd>
+          </div>
+          <div>
+            <dt>Rediversion status</dt>
+            <dd>no</dd>
+          </div>
+          <div>
+            <dt>Water year</dt>
+            <dd>Water year 2026</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="demo" class="demo" aria-labelledby="demo-title">
+        <h2 id="demo-title">What-if demo</h2>
+        <p>
+          Defaults come from a sample logger: pulses in the hour ending at each time, times 10
+          gallons. Flow rate is that volume divided by the minutes since the previous row. The first
+          row is the start mark. Change any measurement and the Demo A1 CSV follows. Reset restores
+          the sample.
+        </p>
+
+        <div class="units">
+          <label>
+            Flow rate unit
+            <select id="flow-unit"></select>
+          </label>
+          <label>
+            Volume unit
+            <select id="volume-unit"></select>
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Sample measurements for the Demo A1 CSV</caption>
+            <thead>
+              <tr>
+                <th scope="col">DATE</th>
+                <th scope="col">TIME</th>
+                <th scope="col">Flow rate</th>
+                <th scope="col">Volume diverted to use</th>
+              </tr>
+            </thead>
+            <tbody id="measurement-rows"></tbody>
+          </table>
+        </div>
+
+        <ul id="issues" class="issues" aria-live="polite"></ul>
+
+        <h3>Plain-language summary</h3>
+        <p id="summary" class="summary" aria-live="polite"></p>
+
+        <div class="actions">
+          <button type="button" id="download-csv">Download Demo A1 CSV</button>
+          <button type="button" id="reset-sample" class="secondary">Reset sample measurements</button>
+        </div>
+        <p class="fine-print">
+          The file header matches the Board A1 Data sheet. Optional columns use the sample values
+          above. This download is demo output, not a CalWATRS filing.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Prototype / demo. Does not submit to CalWATRS. Does not certify compliance. A Qualified
+        Individual reviews any real package before a person files with the Board.
+      </p>
+    </footer>
+
+    <script src="a1-csv.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
