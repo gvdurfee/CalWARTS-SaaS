@@ -1,0 +1,19 @@
+{
+  "dialect": "sample-logger",
+  "timestampColumn": "timestamp",
+  "readingColumn": "pulses",
+  "readingKind": "pulses",
+  "assumption": "Each row's pulses are pulses counted in the interval ending at timestamp.",
+  "a1Fields": {
+    "DATE": "timestamp",
+    "TIME": "timestamp",
+    "FLOW_RATE": "pulses",
+    "FLOW_RATE_UNIT": "registry",
+    "VOLUME_DIVERTED_TO_USE": "pulses",
+    "VOLUME_UNIT": "registry",
+    "BENEFICIAL_USE": "registry",
+    "WATER_RIGHT": "sticky claimed water right",
+    "REDIVERSION_STATUS": "registry",
+    "PLACE_OF_USE": "registry"
+  }
+}

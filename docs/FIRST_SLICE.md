@@ -189,12 +189,15 @@ Do **not** create B/C/D exporters, auth modules, or portal clients in this slice
 5. Automated test or script checks header equality against the Board A1 Data header list.
 6. Agent stops and reports how to run the demo — no scope expansion.
 
+The local page `python3 -m first_slice.ui` meets checks 1–5 for the sample fixture after a person confirms the column map. `python3 -m unittest tests/first_slice_test.py` is the automated check.
+
 ## Open questions
 
 4. Demo hosting (static page, local only, or shared URL) — **Vercel hosts the static page** in `demo/`. Local open of `demo/index.html` still works. A password gate is still **not decided.**
 5. Whether demo sample data stays fictional forever or is later replaced by anonymized real partner data — **not decided; default fictional.**
 6. Whether demo downloads CSV only or also offers Board-shaped `.xlsx` — CSV is required for this demo slice; xlsx optional later.
 
-1. Stack and app shape (CLI vs local web vs desktop) — not decided.
-2. Whether interval pulse semantics match the logger brand target customers use — confirm in interviews; document assumption for the fixture.
+1. Stack and app shape (CLI vs local web vs desktop) — **this slice is a local page** at `python3 -m first_slice.ui`, with the same file-backed registry, raw series, Template Data File, and audit log. No database. The full application stack, and whether a later slice uses a database, are still **not decided.**
+2. Whether interval pulse semantics match the logger brand target customers use — confirm in interviews. **Fixture assumption, recorded in the audit log:** each row’s pulses are the count for the interval ending at timestamp. The first timestamp is a start mark with no interval length.
 3. Whether to fill optional A1 columns in the fixture export or leave blank — default fill as table above unless product owner says blank.
+7. Column mapping for this slice is a local Ingest screen. Export waits until a person confirms the map. The sample dialect still has a fixture file at `fixtures/first-slice/column-map.json`.

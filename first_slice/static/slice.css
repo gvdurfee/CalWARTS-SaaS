@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  --ink: #1c2830;
+  --muted: #3e5160;
+  --line: #d5ddd8;
+  --paper: #f6f4ef;
+  --card: #ffffff;
+  --banner: #f3e2c4;
+  --banner-ink: #5c3b12;
+  --water: #0e4d6c;
+  --focus: #b45309;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+.banner, .sticky {
+  padding: 0.85rem 1.25rem;
+}
+
+.banner {
+  background: var(--banner);
+  color: var(--banner-ink);
+}
+
+.banner p, .sticky p { margin: 0.15rem auto; max-width: 68rem; }
+
+.banner-kicker {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.sticky {
+  background: #e7f0f4;
+  border-bottom: 1px solid var(--line);
+}
+
+.sticky strong { font-size: 1.15rem; }
+
+main { max-width: 68rem; margin: 0 auto; padding: 1.25rem 1.25rem 2.5rem; }
+
+.steps { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0 0 1rem; }
+
+.steps button, .actions button, button {
+  font: inherit;
+  background: var(--water);
+  color: white;
+  border: 0;
+  border-radius: 0.35rem;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+button.secondary, .steps button[aria-selected="false"] {
+  background: white;
+  color: var(--water);
+  border: 1px solid var(--line);
+}
+
+.screen {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+h1, h2 { font-family: Palatino, "Iowan Old Style", serif; line-height: 1.2; font-weight: 600; }
+
+label { display: block; margin: 0.8rem 0; font-weight: 600; }
+
+input[type="text"], select {
+  display: block;
+  margin-top: 0.25rem;
+  font: inherit;
+  padding: 0.35rem 0.45rem;
+  width: min(24rem, 100%);
+}
+
+.facts, table { width: 100%; border-collapse: collapse; }
+
+.facts div, td, th { text-align: left; padding: 0.35rem 0.5rem 0.35rem 0; vertical-align: top; }
+
+th { font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); }
+
+.note, .fine-print { color: var(--muted); font-weight: 400; }
+
+.issues { color: #8a2b12; padding-left: 1.1rem; }
+
+.table-wrap { overflow-x: auto; }
+
+footer { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(--muted); }

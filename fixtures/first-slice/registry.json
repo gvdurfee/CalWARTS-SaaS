@@ -1,0 +1,35 @@
+{
+  "client": {
+    "name": "Sample Irrigation Client"
+  },
+  "claimedWaterRight": {
+    "label": "SAMPLE-WR-001",
+    "templateType": "A1"
+  },
+  "pointOfDiversion": {
+    "label": "POD North Ditch"
+  },
+  "measurementDevice": {
+    "nickname": "North ditch magnetic meter",
+    "measurementDeviceId": "M0SAMPLE1",
+    "notes": "Fixture only — not a real Board id"
+  },
+  "waterYear": {
+    "label": "Water year 2026",
+    "start": "2025-10-01",
+    "end": "2026-09-30"
+  },
+  "method": {
+    "name": "Totalizer",
+    "volumePerPulse": 10,
+    "pulseVolumeUnit": "GALLONS",
+    "outputVolumeUnit": "GALLONS",
+    "outputFlowUnit": "GALLONS PER MINUTE"
+  },
+  "a1Defaults": {
+    "BENEFICIAL_USE": "irrigation",
+    "WATER_RIGHT": "SAMPLE-WR-001",
+    "REDIVERSION_STATUS": "no",
+    "PLACE_OF_USE": "North field"
+  }
+}

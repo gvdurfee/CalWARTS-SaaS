@@ -180,13 +180,13 @@ Demo-slice done-when (landing + what-if A1 CSV) is narrower still and may ship f
 
 1. Application stack, repo host, and packaging (desktop vs web vs CLI) — **repo host is Cursor Origin** (private git). The demo is a static page. The full application stack is still **not decided.**
 2. Authentication / multi-user login — **not decided; do not invent.**
-3. Persistence technology (files only vs local DB vs server) — **not decided.**
+3. Persistence technology (files only vs local DB vs server) — **not decided.** The first slice stores the registry, raw series, Template Data File, and audit log as files. A database is not chosen.
 4. Exact CalWATRS portal methodology form field IDs / labels — content from §934(a) known; UI schema **unknown**.
 5. Full device-type dropdown enums from live CalWATRS registry UI — **unknown**; use free text until captured.
 6. Logger CSV dialects to ship as named profiles — **unknown** until consultant interviews; ship configurable column mapping first.
 7. Whether A1 `VOLUME_DIVERTED_TO_USE` is always treated as “cumulative since last” vs A2 volume “instantaneous” wording in How-to-use — implement with explicit method documentation; confirm with QI interviews.
 8. Pricing, packaging, and commercial SKU — out of engineering PRD.
-9. Where Board template files are vendored in-repo and how schema version/hash is recorded — **decide at implementation.**
+9. Where Board template files are vendored in-repo and how schema version/hash is recorded — **Board A1 is vendored at `calwatrs-sources/template-a1.xlsx`.** Each export records that file’s SHA-256 in the audit log. There is no separate schema version number.
 10. PDF/DOCX toolchain for methodology and checklist — **not decided.**
 11. Demo / landing-page hosting (local-only vs public URL vs password gate) — **Vercel hosts the static demo** (`demo/`). A password gate remains **not decided.** The local page still runs without Vercel.
 12. Demo sample data: keep fictional fixtures vs later anonymized partner data — **default fictional until decided.**

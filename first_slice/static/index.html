@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CalWATRS Measurement Package — First slice</title>
+    <link rel="stylesheet" href="/slice.css" />
+  </head>
+  <body>
+    <header class="banner">
+      <p class="banner-kicker">Prototype / demo</p>
+      <p>
+        This first slice drafts one A1 Template Data File. It does not submit to CalWATRS and it
+        does not certify compliance. Sample names and the Measurement Device ID are fictional.
+      </p>
+    </header>
+    <div class="sticky" role="status" aria-live="polite">
+      <p class="banner-kicker">Claimed water right</p>
+      <p><strong id="sticky-id">Not selected</strong></p>
+    </div>
+    <main>
+      <h1>Logger CSV to one A1 file</h1>
+      <div class="steps" role="tablist" aria-label="First slice steps">
+        <button type="button" id="tab-right" role="tab" aria-selected="true" aria-controls="screen-right">Claimed water right</button>
+        <button type="button" id="tab-ingest" role="tab" aria-selected="false" aria-controls="screen-ingest">Ingest</button>
+        <button type="button" id="tab-export" role="tab" aria-selected="false" aria-controls="screen-export">Template Data File</button>
+      </div>
+
+      <section id="screen-right" class="screen" role="tabpanel">
+        <h2>Claimed water right</h2>
+        <p id="registry-blurb"></p>
+        <dl class="facts" id="registry-facts"></dl>
+        <label>
+          Claimed water right
+          <input id="water-right" type="text" autocomplete="off" spellcheck="false" value="SAMPLE-WR-001" />
+        </label>
+        <p class="fine-print">Enter it once. The same ID stays on every screen and in every exported row.</p>
+        <button type="button" id="use-right">Use this claimed water right</button>
+      </section>
+
+      <section id="screen-ingest" class="screen" role="tabpanel" hidden>
+        <h2>Ingest</h2>
+        <p>
+          Map the logger columns onto the Board A1 fields, then confirm the map. Totalizer derives
+          flow rate and volume diverted to use from pulses. It does not copy pulses into those columns.
+        </p>
+        <label>
+          Logger CSV
+          <input id="csv-file" type="file" accept=".csv,text/csv" />
+        </label>
+        <button type="button" id="use-sample" class="secondary">Use sample logger CSV</button>
+        <div class="table-wrap">
+          <table>
+            <caption>Raw series preview</caption>
+            <thead><tr id="preview-head"></tr></thead>
+            <tbody id="preview-body"></tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Column map into Board A1 fields</caption>
+            <thead>
+              <tr><th scope="col">Board A1 field</th><th scope="col">Source</th></tr>
+            </thead>
+            <tbody id="map-body"></tbody>
+          </table>
+        </div>
+        <label>
+          <input id="confirm-map" type="checkbox" />
+          I confirm this column map
+        </label>
+        <ul id="run-issues" class="issues" aria-live="polite"></ul>
+        <button type="button" id="run-totalizer" disabled>Run Totalizer</button>
+      </section>
+
+      <section id="screen-export" class="screen" role="tabpanel" hidden>
+        <h2>Template Data File</h2>
+        <p id="export-right"></p>
+        <p id="export-summary"></p>
+        <div class="table-wrap">
+          <table>
+            <caption>Derived rows</caption>
+            <thead><tr id="result-head"></tr></thead>
+            <tbody id="result-body"></tbody>
+          </table>
+        </div>
+        <div class="actions">
+          <button type="button" id="download-xlsx" disabled>Download A1 Template Data File</button>
+        </div>
+        <p id="audit-note" class="fine-print"></p>
+        <p class="fine-print">
+          Draft only. Does not submit to CalWATRS. Does not certify compliance.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>Prototype / demo. A Qualified Individual reviews any real package before a person files with the Board.</p>
+    </footer>
+    <script src="/slice.js"></script>
+  </body>
+</html>
